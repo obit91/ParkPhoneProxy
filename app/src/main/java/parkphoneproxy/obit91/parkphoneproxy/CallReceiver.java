@@ -23,7 +23,7 @@ public class CallReceiver extends PhoneCallReceiver {
     @Override
     protected void onIncomingCallEnded(Context ctx, String number, Date start, Date end) {
         Toast.makeText(ctx, "Incoming ended", Toast.LENGTH_SHORT).show();
-        delegate.dialNumber(number);
+        delegate.initiateCall();
     }
 
     @Override
@@ -34,6 +34,6 @@ public class CallReceiver extends PhoneCallReceiver {
     @Override
     protected void onMissedCall(Context ctx, String number, Date start) {
         Toast.makeText(ctx, "Missed call", Toast.LENGTH_SHORT).show();
-        delegate.dialNumber(number);
+        delegate.initiateCall();
     }
 }
